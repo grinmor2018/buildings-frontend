@@ -17,6 +17,9 @@ import { CardsComponent } from './card/card.component';
 import { ToastComponent } from './toast/toast.component';
 import { LlistaBuildingsComponent } from './llista-buildings/llista-buildings.component';
 import { FormBuildingsComponent } from './form-buildings/form-buildings.component';
+import { LlistaMantenimentComponent } from './llista-manteniment/llista-manteniment.component';
+import { FormMantenimentComponent } from './form-manteniment/form-manteniment.component';
+
 
 export const ComponentsRoutes: Routes = [
 	{
@@ -216,6 +219,114 @@ export const ComponentsRoutes: Routes = [
         component: FormBuildingsComponent,
         data: {
           title: 'Editar edificis',
+        }
+      },
+      {
+        path: 'ambits/crear',
+        component: FormMantenimentComponent,
+        data: {
+          title: 'Crear àmbits',
+          category: 'Àmbit',
+          field: 'ambit'
+        }
+      },
+      {
+        path: 'amnbits/editar/:id',
+        component: FormMantenimentComponent,
+        data: {
+          title: 'Editar àmbits',
+          category: 'Àmbit',
+          field: 'ambit'
+        }
+      },
+      {
+        path: 'floors/crear',
+        component: FormMantenimentComponent,
+        data: {
+          title: 'Crear plantes',
+          category: 'Planta',
+          field: 'floor'
+        }
+      },
+      {
+        path: 'floors/editar/:id',
+        component: FormMantenimentComponent,
+        data: {
+          title: 'Editar plantes',
+          category: 'Planta',
+          field: 'floor'
+        }
+      },
+      {
+        path: 'waitingrooms/crear',
+        component: FormMantenimentComponent,
+        data: {
+          title: `Crear sala d'espera`,
+          category: `Sala d'espera`,
+          field: 'waitingroom'
+        }
+      },
+      {
+        path: 'waitingrooms/editar/:id',
+        component: FormMantenimentComponent,
+        data: {
+          title: `Editar sala d'espera`,
+          category: `Sala d'espera`,
+          field: 'waitingroom'
+        }
+      },
+      {
+        path: 'servicespecialities/crear',
+        component: FormMantenimentComponent,
+        data: {
+          title: 'Crear servei o especialitat',
+          category: 'Servei o especialitat',
+          field: 'servicespeciality'
+        }
+      },
+      {
+        path: 'servicespecialities/editar/:id',
+        component: FormMantenimentComponent,
+        data: {
+          title: 'Editar servei o especialitat',
+          category: 'Servei o especialitat',
+          field: 'servicespeciality'
+        }
+      },
+      {
+        path: 'consultingrooms/crear',
+        component: FormMantenimentComponent,
+        data: {
+          title: 'Crear consultori',
+          category: 'Consultori',
+          field: 'consultingroom'
+        }
+      },
+      {
+        path: 'consultingrooms/editar/:id',
+        component: FormMantenimentComponent,
+        data: {
+          title: 'Editar consultori',
+          category: 'Consultori',
+          field: 'consultingroom'
+        }
+      },
+      {
+        path: 'rooms/crear',
+        component: FormMantenimentComponent,
+        data: {
+          title: 'Crear habitació',
+          category: 'Habitació',
+          field: 'room'
+        }
+      },
+      {
+        path: 'rooms/editar/:id',
+        component: FormMantenimentComponent,
+        data: {
+          title: 'Editar habitació',
+          category: 'Habitació',
+          field: 'room'
         }
       }
 		]

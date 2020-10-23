@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -24,11 +25,20 @@ import { ToastComponent } from './toast/toast.component';
 import { ToastsContainer } from './toast/toast-container';
 import { LlistaBuildingsComponent } from './llista-buildings/llista-buildings.component';
 import { FormBuildingsComponent } from './form-buildings/form-buildings.component';
+import { FormMantenimentComponent } from './form-manteniment/form-manteniment.component';
+import { LlistaMantenimentComponent } from './llista-manteniment/llista-manteniment.component';
+import { FormAmbitsComponent } from './form-ambits/form-ambits.component';
+import { FormFloorsComponent } from './form-floors/form-floors.component';
+import { FormWaitingroomsComponent } from './form-waitingrooms/form-waitingrooms.component';
+import { FormServicespecialitiesComponent } from './form-servicespecialities/form-servicespecialities.component';
+import { FormConsultingroomsComponent } from './form-consultingrooms/form-consultingrooms.component';
+import { FormRoomsComponent } from './form-rooms/form-rooms.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(ComponentsRoutes),
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     NgbModule
@@ -51,7 +61,15 @@ import { FormBuildingsComponent } from './form-buildings/form-buildings.componen
     ToastComponent,
     ToastsContainer,
     LlistaBuildingsComponent,
-    FormBuildingsComponent
+    FormBuildingsComponent,
+    FormMantenimentComponent,
+    LlistaMantenimentComponent,
+    FormAmbitsComponent,
+    FormFloorsComponent,
+    FormWaitingroomsComponent,
+    FormServicespecialitiesComponent,
+    FormConsultingroomsComponent,
+    FormRoomsComponent
   ]
 })
 export class ComponentsModule {}

@@ -42,15 +42,16 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
-    path: "/component/buildings/crear",
-    title: "Crear ambits",
+    path: "/component/ambits/crear",
+    title: "Crear àmbits",
+    category: "Àmbit",
     icon: "mdi mdi-image-filter-vintage",
     class: "",
     extralink: false,
     submenu: [],
   },
   {
-    path: "/component/buildings/crear",
+    path: "/component/floors/crear",
     title: "Crear plantes",
     icon: "mdi mdi-backburger",
     class: "",
@@ -58,7 +59,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
-    path: "/component/buildings/crear",
+    path: "/component/waitingrooms/crear",
     title: "Crear Sales d'espera",
     icon: "mdi mdi-tablet",
     class: "",
@@ -66,7 +67,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
-    path: "/component/buildings/crear",
+    path: "/component/servicespecialities/crear",
     title: "Crear serveis/especialitats",
     icon: "mdi mdi-arrange-bring-to-front",
     class: "",
@@ -74,7 +75,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
-    path: "/component/buildings/crear",
+    path: "/component/consultingrooms/crear",
     title: "Crear consultoris",
     icon: "mdi mdi-view-carousel",
     class: "",
@@ -82,7 +83,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: [],
   },
   {
-    path: "/component/buildings/crear",
+    path: "/component/rooms/crear",
     title: "Crear habitacions",
     icon: "mdi mdi-message-bulleted",
     class: "",

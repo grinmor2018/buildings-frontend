@@ -13,6 +13,7 @@ import {
   NavigationError
 } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
+import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-spinner',
