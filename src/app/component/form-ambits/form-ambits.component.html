@@ -1,4 +1,4 @@
-<div >
+<div class="animated fadeIn">
   <!--/.row-->
   <div class="row">
     <!--Formulari-->
@@ -6,53 +6,48 @@
       <div class="card">
         <div class="card-header">Introduir <strong>àmbit</strong></div>
         <div class="card-body">
-          <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+          <form (submit)="submitItem()">
             <div class="form-group row">
-              <label class="col-md-3 col-form-label" for="hf-codi"
-                >Codi</label
-              >
+              <label class="col-md-3 col-form-label" for="hf-codi">Codi</label>
               <div class="col-md-9">
                 <input
-                  type="text"
                   id="hf-codi"
                   name="hf-codi"
                   class="form-control"
                   placeholder="Entrar codi.."
                   [(ngModel)]="item.code"
                   autofocus
-                >
+                />
                 <span class="help-block">Si us plau, entreu el codi</span>
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-md-3 col-form-label" for="hf-nom"
-                >Nom</label>
+              <label class="col-md-3 col-form-label" for="hf-nom">Nom</label>
               <div class="col-md-9">
                 <input
-                  type="text"
                   id="hf-nom"
                   name="hf-nom"
                   class="form-control"
                   placeholder="Entrar nom.."
                   [(ngModel)]="item.name"
-                >
+                />
                 <span class="help-block">Si us plau, entreu el nom</span>
               </div>
+              <button type="submit" class="btn btn-sm btn-primary">
+                <i class="fa fa-dot-circle-o"></i> Save
+              </button>
+              <button type="reset" class="btn btn-sm btn-danger">
+                <i class="fa fa-ban"></i> Reset
+              </button>
             </div>
+            <div class="card-footer"></div>
           </form>
-        </div>
-        <div class="card-footer">
-          <button type="submit" class="btn btn-sm btn-primary">
-            <i class="fa fa-dot-circle-o"></i> Save
-          </button>
-          <button type="reset" class="btn btn-sm btn-danger">
-            <i class="fa fa-ban"></i> Reset
-          </button>
         </div>
       </div>
       <!--/.col-->
     </div>
 
+    <!--Llista-->
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
@@ -62,46 +57,25 @@
           <table class="table table-bordered table-striped table-sm">
             <thead>
               <tr>
+                <th>Id</th>
                 <th>Codi</th>
                 <th>Nom</th>
+                <th>Creat</th>
+                <th>Boton</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Vishnu Serghei</td>
-                <td>2012/01/01</td>
+
+              <tr *ngFor="let ambit of ambits">
+                <td>{{ambit._id}}</td>
+                <td>{{ambit.code}</td>
+                <td>{{ambit.name}}</td>
+                <td>{{ambit.createdAt}}</td>
                 <td>
                   <span class="badge badge-success">Active</span>
                 </td>
               </tr>
-              <tr>
-                <td>Zbyněk Phoibos</td>
-                <td>2012/02/01</td>
-                <td>
-                  <span class="badge badge-danger">Banned</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Einar Randall</td>
-                <td>2012/02/01</td>
-                <td>
-                  <span class="badge badge-secondary">Inactive</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Félix Troels</td>
-                <td>2012/03/01</td>
-                <td>
-                  <span class="badge badge-warning">Pending</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Aulus Agmundr</td>
-                <td>2012/01/21</td>
-                <td>
-                  <span class="badge badge-success">Active</span>
-                </td>
-              </tr>
+
             </tbody>
           </table>
           <nav>
@@ -123,4 +97,3 @@
     <!--/.row-->
   </div>
 </div>
-

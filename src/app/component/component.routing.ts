@@ -19,6 +19,7 @@ import { LlistaBuildingsComponent } from './llista-buildings/llista-buildings.co
 import { FormBuildingsComponent } from './form-buildings/form-buildings.component';
 import { LlistaMantenimentComponent } from './llista-manteniment/llista-manteniment.component';
 import { FormMantenimentComponent } from './form-manteniment/form-manteniment.component';
+import { FormAmbitsComponent } from './form-ambits/form-ambits.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -223,7 +224,7 @@ export const ComponentsRoutes: Routes = [
       },
       {
         path: 'ambits/crear',
-        component: FormMantenimentComponent,
+        component: FormAmbitsComponent,
         data: {
           title: 'Crear àmbits',
           category: 'Àmbit',
@@ -232,7 +233,7 @@ export const ComponentsRoutes: Routes = [
       },
       {
         path: 'amnbits/editar/:id',
-        component: FormMantenimentComponent,
+        component: FormAmbitsComponent,
         data: {
           title: 'Editar àmbits',
           category: 'Àmbit',

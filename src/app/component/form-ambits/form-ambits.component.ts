@@ -13,12 +13,27 @@ export class FormAmbitsComponent {
     name: ''
   };
 
+  ambits: Ambit[]= [];
+
   constructor(private buildingService: BuildingsService) { }
 
-  ngOnInit(){
+  ngOnInit(): void {
+    this.getItems();
+    console.log(this.ambits);
   }
 
-  submitItem() {
+  getItems(){
+    this.buildingService.getAmbits()
+    .subscribe(
+      (data: Ambit[]) => {
+        this.ambits= data;
+        console.log(data);
+      },
+      err => console.log(err)
+    )
+  }
+
+  submitItem(){
     console.log(this.item);
     this.buildingService.createAmbit(this.item)
     .subscribe(

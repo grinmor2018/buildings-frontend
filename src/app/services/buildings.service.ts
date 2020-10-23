@@ -27,7 +27,7 @@ export class BuildingsService {
       return this.http.get<Building>(`${this.URL}/buildings/$id`);
     }
     createBuilding(building: Building): Observable<Building>{
-      return this.http.post<Building>(`${this.URL}/buildings/crear`, building);
+      return this.http.post<Building>(`${this.URL}/buildings/create`, building);
     }
     deleteBuilding(id:string): Observable<Building>{
       return this.http.delete<Building>(`${this.URL}/buildings/delete?buildingId=${id}`);
@@ -44,7 +44,7 @@ export class BuildingsService {
       return this.http.get<Ambit>(`${this.URL}/ambits/$id`);
     }
     createAmbit(ambit: Ambit): Observable<Ambit>{
-      return this.http.post<Ambit>(`${this.URL}/ambits/crear`, ambit);
+      return this.http.post<Ambit>(`${this.URL}/ambits/create`, ambit);
     }
     deleteAmbit(id:string): Observable<Ambit>{
       return this.http.delete<Ambit>(`${this.URL}/ambits/delete?ambitId=${id}`);
@@ -61,7 +61,7 @@ export class BuildingsService {
       return this.http.get<Floor>(`${this.URL}/floors/$id`);
     }
     createFloor(floor: Floor): Observable<Floor>{
-      return this.http.post<Floor>(`${this.URL}/floors/crear`, floor);
+      return this.http.post<Floor>(`${this.URL}/floors/create`, floor);
     }
     deleteFloor(id:string): Observable<Floor>{
       return this.http.delete<Floor>(`${this.URL}/floors/delete?floorId=${id}`);
@@ -78,7 +78,7 @@ export class BuildingsService {
       return this.http.get<Waitingroom>(`${this.URL}/waitingrooms/$id`);
     }
     createWaitingroom(waitingroom: Waitingroom): Observable<Waitingroom>{
-      return this.http.post<Waitingroom>(`${this.URL}/waitingrooms/crear`, waitingroom);
+      return this.http.post<Waitingroom>(`${this.URL}/waitingrooms/create`, waitingroom);
     }
     deleteWaitingroom(id:string): Observable<Waitingroom>{
       return this.http.delete<Waitingroom>(`${this.URL}/waitingrooms/delete?waitingroomId=${id}`);
@@ -95,7 +95,7 @@ export class BuildingsService {
       return this.http.get<Servicespeciality>(`${this.URL}/servicespecialities/$id`);
     }
     createServicespeciality(servicespeciality: Servicespeciality): Observable<Servicespeciality>{
-      return this.http.post<Servicespeciality>(`${this.URL}/servicespecialities/crear`, servicespeciality);
+      return this.http.post<Servicespeciality>(`${this.URL}/servicespecialities/create`, servicespeciality);
     }
     deleteServicespeciality(id:string): Observable<Servicespeciality>{
       return this.http.delete<Servicespeciality>(`${this.URL}/servicespecialities/delete?servicespecialityId=${id}`);
@@ -112,7 +112,7 @@ export class BuildingsService {
       return this.http.get<Consultingroom>(`${this.URL}/consultingrooms/$id`);
     }
     createConsultingroom(consultingroom: Consultingroom): Observable<Consultingroom>{
-      return this.http.post<Consultingroom>(`${this.URL}/consultingrooms/crear`, consultingroom);
+      return this.http.post<Consultingroom>(`${this.URL}/consultingrooms/create`, consultingroom);
     }
     deleteConsultingroom(id:string): Observable<Consultingroom>{
       return this.http.delete<Consultingroom>(`${this.URL}/consultingrooms/delete?consultingroomId=${id}`);
@@ -130,7 +130,7 @@ export class BuildingsService {
       return this.http.get<Room>(`${this.URL}/rooms/$id`);
     }
     createRoom(room: Room): Observable<Room>{
-      return this.http.post<Room>(`${this.URL}/rooms/crear`, room);
+      return this.http.post<Room>(`${this.URL}/rooms/create`, room);
     }
     deleteRoom(id:string): Observable<Room>{
       return this.http.delete<Room>(`${this.URL}/rooms/delete?roomId=${id}`);
