@@ -33,6 +33,7 @@ import { FormWaitingroomsComponent } from './form-waitingrooms/form-waitingrooms
 import { FormServicespecialitiesComponent } from './form-servicespecialities/form-servicespecialities.component';
 import { FormConsultingroomsComponent } from './form-consultingrooms/form-consultingrooms.component';
 import { FormRoomsComponent } from './form-rooms/form-rooms.component';
+import { LlistaAmbitsComponent } from './llista-ambits/llista-ambits.component';
 
 @NgModule({
   imports: [
@@ -69,7 +70,8 @@ import { FormRoomsComponent } from './form-rooms/form-rooms.component';
     FormWaitingroomsComponent,
     FormServicespecialitiesComponent,
     FormConsultingroomsComponent,
-    FormRoomsComponent
+    FormRoomsComponent,
+    LlistaAmbitsComponent
   ]
 })
 export class ComponentsModule {}

@@ -1,33 +1,56 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { Ambit } from '../../interfaces/Ambit';
 import { BuildingsService } from '../../services/buildings.service';
 
 @Component({
-  templateUrl: './form-ambits.component.html'
+
+  selector: 'app-form-ambits',
+  templateUrl: './form-ambits.component.html',
+  styleUrls: ['./form-ambits.component.css']
 })
-export class FormAmbitsComponent {
+export class FormAmbitsComponent implements OnInit {
 
   item: Ambit = {
     code: '',
     name: ''
   };
 
-  ambits: Ambit[]= [];
+  items: Ambit[]= [];
 
-  constructor(private buildingService: BuildingsService) { }
+  editing: boolean = false;
 
-  ngOnInit(): void {
+  constructor(
+    private buildingService: BuildingsService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+    ) { }
+
+  ngOnInit() {
+    const params = this.activatedRoute.snapshot.params;
+    console.log(params);
+    if (params.id) {
+      this.buildingService.getAmbit(params.id)
+        .subscribe(
+          res => {
+            console.log(res);
+            this.item = res;
+            this.editing = true;
+          },
+          err => console.log(err)
+        )
+    }
     this.getItems();
-    console.log(this.ambits);
   }
 
   getItems(){
     this.buildingService.getAmbits()
     .subscribe(
-      (data: Ambit[]) => {
-        this.ambits= data;
-        console.log(data);
+      res => {
+        this.items = res;
+        console.log(res);
+        console.log(this.items);
       },
       err => console.log(err)
     )
@@ -37,7 +60,32 @@ export class FormAmbitsComponent {
     console.log(this.item);
     this.buildingService.createAmbit(this.item)
     .subscribe(
-      res => console.log(res),
+      res => {
+        console.log(res);
+        this.router.navigate(['/component/ambits']);
+      },
+      err => console.log(err)
+    )
+  }
+
+  deleteItem(id: string){
+    this.buildingService.deleteAmbit(id)
+    .subscribe(
+      res => {
+        this.getItems();
+      },
+      err => console.log(err)
+    )
+  }
+
+  editItem(){
+    delete this.item.createdAt;
+    this.buildingService.updateAmbit(this.item._id, this.item)
+    .subscribe(
+      res => {
+        console.log(res);
+        this.router.navigate(['/component/ambits']);
+      },
       err => console.log(err)
     )
   }

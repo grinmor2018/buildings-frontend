@@ -6,7 +6,7 @@
       <div class="card">
         <div class="card-header">Introduir <strong>àmbit</strong></div>
         <div class="card-body">
-          <form (submit)="submitItem()">
+          <form (submit)="editing ? editItem() : submitItem()">
             <div class="form-group row">
               <label class="col-md-3 col-form-label" for="hf-codi">Codi</label>
               <div class="col-md-9">
@@ -33,14 +33,15 @@
                 />
                 <span class="help-block">Si us plau, entreu el nom</span>
               </div>
-              <button type="submit" class="btn btn-sm btn-primary">
-                <i class="fa fa-dot-circle-o"></i> Save
+            </div>
+            <div class="card-footer">
+              <button type="submit" class="btn btn-sm btn-success">
+                <i class="fa fa-check"></i> Save
               </button>
               <button type="reset" class="btn btn-sm btn-danger">
                 <i class="fa fa-ban"></i> Reset
               </button>
             </div>
-            <div class="card-footer"></div>
           </form>
         </div>
       </div>
@@ -54,42 +55,26 @@
           <i class="fa fa-align-justify"></i> Àmbits
         </div>
         <div class="card-body">
-          <table class="table table-bordered table-striped table-sm">
+          <table class="table table-bordered table-hover table-sm">
             <thead>
               <tr>
-                <th>Id</th>
                 <th>Codi</th>
                 <th>Nom</th>
-                <th>Creat</th>
-                <th>Boton</th>
               </tr>
             </thead>
             <tbody>
-
-              <tr *ngFor="let ambit of ambits">
-                <td>{{ambit._id}}</td>
-                <td>{{ambit.code}</td>
-                <td>{{ambit.name}}</td>
-                <td>{{ambit.createdAt}}</td>
-                <td>
-                  <span class="badge badge-success">Active</span>
-                </td>
+              <tr *ngFor="let item of items.ambits" onclick="">
+                <td>{{ item.code }}</td>
+                <td>{{ item.name }}</td>
+                <td><button type="button" class="btn btn-sm btn-primary" [routerLink]="['/ambits/editar', item._id]">
+                  <i class="fa fa-check"></i> Editar
+                </button>
+                <button type="button" class="btn btn-sm btn-danger" (click)= "deleteItem(item._id)">
+                  <i class="fa fa-times"></i> Esborrar
+                </button></td>
               </tr>
-
             </tbody>
           </table>
-          <nav>
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-              <li class="page-item active">
-                <a class="page-link" href="#">1</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-          </nav>
         </div>
       </div>
     </div>
