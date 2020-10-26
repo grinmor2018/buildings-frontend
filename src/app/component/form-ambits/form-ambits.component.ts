@@ -1,95 +1,111 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms";
+import { Router, ActivatedRoute } from "@angular/router";
 
-import { Ambit } from '../../interfaces/Ambit';
-import { BuildingsService } from '../../services/buildings.service';
+import { Ambit } from "../../interfaces/Ambit";
+import { BuildingsService } from "../../services/buildings.service";
 
 @Component({
-
-  selector: 'app-form-ambits',
-  templateUrl: './form-ambits.component.html',
-  styleUrls: ['./form-ambits.component.css']
+  selector: "app-form-ambits",
+  templateUrl: "./form-ambits.component.html",
+  styleUrls: ["./form-ambits.component.css"],
 })
 export class FormAmbitsComponent implements OnInit {
-
   item: Ambit = {
-    code: '',
-    name: ''
+    _id:"",
+    code: "",
+    name: "",
   };
 
-  items: Ambit[]= [];
+  items: Ambit[] = [];
 
   editing: boolean = false;
 
   constructor(
-    private buildingService: BuildingsService,
+    public buildingService: BuildingsService,
     private router: Router,
     private activatedRoute: ActivatedRoute
-    ) { }
+  ) {}
 
   ngOnInit() {
-    const params = this.activatedRoute.snapshot.params;
-    console.log(params);
-    if (params.id) {
-      this.buildingService.getAmbit(params.id)
-        .subscribe(
-          res => {
-            console.log(res);
-            this.item = res;
-            this.editing = true;
-          },
-          err => console.log(err)
-        )
-    }
     this.getItems();
+    this.editing = false;
   }
 
-  getItems(){
-    this.buildingService.getAmbits()
-    .subscribe(
-      res => {
+  getItems() {
+    this.buildingService.getAmbits().subscribe(
+      (res) => {
         this.items = res;
         console.log(res);
         console.log(this.items);
       },
-      err => console.log(err)
-    )
+      (err) => console.log(err)
+    );
   }
 
-  submitItem(){
+  getItem(id: string) {
+    this.buildingService.getAmbit(id).subscribe(
+      (res) => {
+        this.item = res;
+        console.log(this.item);
+      },
+      (err) => console.log(err)
+    );
+  }
+
+  submitItem() {
+    this.item = this.buildingService.selectedAmbit;
     console.log(this.item);
     this.buildingService.createAmbit(this.item)
     .subscribe(
-      res => {
+      (res) => {
         console.log(res);
-        this.router.navigate(['/component/ambits']);
-      },
-      err => console.log(err)
-    )
-  }
-
-  deleteItem(id: string){
-    this.buildingService.deleteAmbit(id)
-    .subscribe(
-      res => {
+        this.editing= false;
         this.getItems();
       },
-      err => console.log(err)
-    )
+      (err) => console.log(err)
+    );
   }
 
-  editItem(){
-    delete this.item.createdAt;
+  deleteItem(id: string) {
+    if (confirm("Are you sure to delete?")) {
+      this.buildingService.deleteAmbit(id).subscribe(
+        (res) => {
+          this.getItems();
+          this.resetForm();
+        },
+        (err) => console.log(err)
+      );
+    }
+  }
+
+  editItem() {
+    this.item = this.buildingService.selectedAmbit;
+    console.log(this.item);
     this.buildingService.updateAmbit(this.item._id, this.item)
     .subscribe(
-      res => {
+      (res) => {
         console.log(res);
-        this.router.navigate(['/component/ambits']);
+        this.getItems();
+        this.editing= false;
+        this.buildingService.selectedAmbit={
+          _id:"",
+          code: "",
+          name: "",
+        };
       },
-      err => console.log(err)
-    )
+      (err) => console.log(err)
+    );
   }
 
+  resetForm(form?: NgForm) {
+    if (form) {
+      form.reset();
+    }
+  }
 
-
+  preEditItem(ambit: Ambit): void {
+    this.buildingService.selectedAmbit = Object.assign({}, ambit);
+    this.editing = true;
+  }
 }

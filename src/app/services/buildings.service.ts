@@ -15,9 +15,15 @@ import { Room } from '../interfaces/Room';
 })
 export class BuildingsService {
 
-  URL: string= 'http://localhost:3000';
+  public selectedAmbit: Ambit = {
+    code: '',
+    name: ''
+  };
 
-  constructor( private http: HttpClient ) {}
+  readonly URL: string= 'http://localhost:3000';
+
+  constructor( private http: HttpClient ) {
+  }
 
     // Edificis
     getBuildings(): Observable<Building[]>{
@@ -41,7 +47,7 @@ export class BuildingsService {
       return this.http.get<Ambit[]>(`${this.URL}/ambits`);
     }
     getAmbit(id:string): Observable<Ambit>{
-      return this.http.get<Ambit>(`${this.URL}/ambits/$id`);
+      return this.http.get<Ambit>(`${this.URL}/ambits/${id}`);
     }
     createAmbit(ambit: Ambit): Observable<Ambit>{
       return this.http.post<Ambit>(`${this.URL}/ambits/create`, ambit);
@@ -58,7 +64,7 @@ export class BuildingsService {
       return this.http.get<Floor[]>(`${this.URL}/floors`);
     }
     getFloor(id:string): Observable<Floor>{
-      return this.http.get<Floor>(`${this.URL}/floors/$id`);
+      return this.http.get<Floor>(`${this.URL}/floors/${id}`);
     }
     createFloor(floor: Floor): Observable<Floor>{
       return this.http.post<Floor>(`${this.URL}/floors/create`, floor);

@@ -13,10 +13,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of items.ambits" onclick="">
+          <tr *ngFor="let item of items.ambits">
             <td>{{ item.code }}</td>
             <td>{{ item.name }}</td>
-            <td><button type="button" class="btn btn-sm btn-primary" (click)= "editItem(item._id, item)">
+            <td><button type="button" class="btn btn-sm btn-primary" (click)= "loadForm(item._id)">
               <i class="fa fa-check"></i> Editar
             </button>
             <button type="button" class="btn btn-sm btn-danger" (click)= "deleteItem(item._id)">
@@ -25,18 +25,6 @@
           </tr>
         </tbody>
       </table>
-      <nav>
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-          <li class="page-item active">
-            <a class="page-link" href="#">1</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">4</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
     </div>
   </div>
 </div>

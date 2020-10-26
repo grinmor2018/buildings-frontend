@@ -15,7 +15,7 @@
                   name="hf-codi"
                   class="form-control"
                   placeholder="Entrar codi.."
-                  [(ngModel)]="item.code"
+                  [(ngModel)]="this.buildingService.selectedAmbit.code"
                   autofocus
                 />
                 <span class="help-block">Si us plau, entreu el codi</span>
@@ -29,7 +29,7 @@
                   name="hf-nom"
                   class="form-control"
                   placeholder="Entrar nom.."
-                  [(ngModel)]="item.name"
+                  [(ngModel)]="this.buildingService.selectedAmbit.name"
                 />
                 <span class="help-block">Si us plau, entreu el nom</span>
               </div>
@@ -38,7 +38,7 @@
               <button type="submit" class="btn btn-sm btn-success">
                 <i class="fa fa-check"></i> Save
               </button>
-              <button type="reset" class="btn btn-sm btn-danger">
+              <button type="reset" class="btn btn-sm btn-danger" (click)="resetForm()">
                 <i class="fa fa-ban"></i> Reset
               </button>
             </div>
@@ -63,10 +63,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of items.ambits" onclick="">
+              <tr *ngFor="let item of items.ambits">
                 <td>{{ item.code }}</td>
                 <td>{{ item.name }}</td>
-                <td><button type="button" class="btn btn-sm btn-primary" [routerLink]="['/ambits/editar', item._id]">
+                <td><button type="button" class="btn btn-sm btn-primary" (click)= "preEditItem(item)">
                   <i class="fa fa-check"></i> Editar
                 </button>
                 <button type="button" class="btn btn-sm btn-danger" (click)= "deleteItem(item._id)">
