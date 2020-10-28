@@ -4,7 +4,7 @@ import { Title } from "@angular/platform-browser";
 import { Router, NavigationEnd, ActivatedRoute, Data } from "@angular/router";
 import { filter, map, mergeMap } from "rxjs/operators";
 
-import { BuildingsService } from "../../services/buildings.service";
+import { RespostasService } from "../../services/respostas.service";
 
 import { Ambit } from '../../interfaces/Ambit';
 
@@ -23,7 +23,7 @@ export class FormMantenimentComponent implements OnInit {
   };
 
   constructor(
-    private buildingService: BuildingsService,
+    private respostasService: RespostasService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title
@@ -56,7 +56,7 @@ export class FormMantenimentComponent implements OnInit {
   }
 
   getBuildings() {
-    this.buildingService.getBuildings().subscribe(
+    this.respostasService.getEdificis().subscribe(
       (res) => console.log(res),
       (err) => console.log(err)
     );

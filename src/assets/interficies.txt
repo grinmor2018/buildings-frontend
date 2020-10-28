@@ -1,0 +1,47 @@
+/*****************************************/
+/*******INTERFICIES EDIFICIS**************/
+/*****************************************/
+export interface RespostaEdificis {
+  status: string;
+  idioma: string;
+  edificis: Edifici[];
+}
+
+export interface Edifici {
+  id: string;
+  nom: string;
+  adresa: string;
+  imatge: string;
+  lloc: string;
+  contacte: Contacte[];
+  serveis: Servei[];
+}
+
+export interface Contacte {
+  icon: string;
+  nomcontacte: string;
+  tipo: string;
+  valor: string;
+}
+
+export interface Servei {
+  ambit?: string;
+  planta: Planta[];
+  nomservei?: string;
+}
+
+export interface Planta {
+  numero: number;
+  sala: Sala[];
+}
+
+export interface Sala {
+  nomsala?: string;
+  serv_espe: Servespe[];
+  nanomsala?: string;
+}
+
+export interface Servespe {
+  nomservei: string;
+  hab_cons: string;
+}

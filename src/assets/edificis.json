@@ -1,0 +1,489 @@
+{
+	"status": "ok",
+	"idioma": "ca",
+	"edificis" : [
+					{
+						"id":"T",
+						"nom":"Edifici Taulí",
+						"adresa":"Recinte Taulí. Parc del Taulí, 1, Sabadell",
+						"imatge":"",
+						"lloc":"Reciente",
+						"contacte": [
+										{
+											
+											"icon":"location-outline",
+											"nomcontacte": "Com arribar",
+											"tipo": "enlace",
+											"valor":"url maps"
+										},
+										{
+											"icon":"call-outline",
+											"nomcontacte": "Centraleta",
+											"tipo": "llamada",
+											"valor":"937231010"
+
+										},
+										{
+											"icon":"mail-open-outline",
+											"nomcontacte": "informacio",
+											"tipo": "email",
+											"valor":"informacio@tauli.cat"
+											
+										},
+										{
+											"icon":"time-outline",
+											"nomcontacte": "Atenció al públic",
+											"tipo": "",
+											"valor":"de DL a DV"
+											
+										}
+									],
+						"serveis": [
+										{
+										"ambit" : "Hospitalitzacio",
+										"planta": [
+													{ 
+														"numero": 1,
+														"sala": [
+																{
+																	"nomsala" : "",
+																	"serv_espe":[ 
+																					{
+																						"nomservei": "Semicrítics",
+																						"hab_cons" : "101 a 173"
+																					},
+																					{
+																						"nomservei": "UCI",
+																						"hab_cons" : "101 a 173"
+																					},
+																					{
+																						"nomservei": "Unitat del Son",
+																						"hab_cons" : "101 a 173"
+																					}		
+																				]
+																	}	
+																]
+													},
+													{ 
+														"numero": 2,
+														"sala" : [
+																	{
+																	"nomsala" : "",
+																	"serv_espe": [ 
+																					{
+																						"nomservei": "Cirugia Pediatrica",
+																						"hab_cons" : "201 a 242"
+																					},
+																					{
+																						"nomservei": "Escola Taulí",
+																						"hab_cons" : "201 a 242"
+																					},
+																					{
+																						"nomservei": "Medicina PEdiatrica",
+																						"hab_cons" : "201 a 242"
+																					},
+																					{
+																						"nomservei": "UCA",
+																						"hab_cons" : "201 a 242"
+																					}
+																	
+																				]
+																	}
+																]
+													},			
+													{ 
+														"numero": 3,
+														"sala" : [
+																	{
+																		"nomsala" : "",
+																		"serv_espe":[ 
+																						{
+																							"nomservei": "Ginecologia i Obstetrícia",
+																							"hab_cons" : ""
+																						},
+																						{
+																							"nomservei": "Neonatologia i UCI Pediàtrica",
+																							"hab_cons" : ""
+																						}
+																					]	
+																	}		
+																]	
+													},
+													{ 
+														"numero": 4,
+														"sala" : [
+																	{
+																		"nomsala" :"",
+																		"serv_espe":[ 
+																						{
+																							"nomservei": "Cirurgia General",
+																							"hab_cons" : ""
+																						}
+																					]
+																	}
+																]			
+													}
+												]
+										},
+										{
+										"ambit" : "Ambulatori",
+										"planta" : [
+													{ 
+														"numero": 0,
+														"sala": [
+																	{
+																		"nomsala": "",
+																		"serv_espe": [
+																						{
+																							"nomservei": "Urgències",
+																							"hab_cons" : ""
+																						}
+																					]
+																	},
+																	{
+																		"nomsala": "Vestíbul",
+																		"serv_espe": [
+																						{
+																							"nomservei": "Informació",
+																							"hab_cons" : ""
+																						},
+																						{
+																							"nomservei": "Recepcio",
+																							"hab_cons" : ""
+																						},
+																						{
+																							"nomservei": "Programacio",
+																							"hab_cons" : ""
+																						}
+																					]
+																	},
+																	{
+																		"nomsala": "0A",
+																		"serv_espe": [
+																						{
+																							"nomservei": "Atenció al client",
+																							"hab_cons" : ""
+																						},
+																						{
+																							"nomservei": "Treball social",
+																							"hab_cons" : ""
+																						},
+																						{
+																							"nomservei": "Voluntariat",
+																							"hab_cons" : ""
+																						}
+																					]
+																	},
+																	{
+																		"nomsala": "0B",
+																		"serv_espe": [
+																						{
+																							"nomservei": "Urgencies de pediatria",
+																							"hab_cons" : ""
+																						}
+																						
+																					]
+																	},
+																	{
+																		"nomsala": "0C",
+																		"serv_espe": [
+																						{
+																							"nomservei": "Consultes Pediatria",
+																							"hab_cons" : "1 al 19"
+																						},
+																						{
+																							"nomservei": "Hospital de Dia Pediatria",
+																							"hab_cons" : "1 al 19"
+																						}
+																			
+																					]
+																	}
+																]
+													},
+													{ 
+														"numero": 1,
+														"sala": [
+																	{
+																		"nomsala": "1",
+																		"serv_espe": [
+																						{
+																							"nomservei": "Radiologia (RX, Ecografies, TAC)",
+																							"hab_cons" : "3 al 15"
+																						},
+																						{
+																							"nomservei": "Radiologia Vascular Intervencionista",
+																							"hab_cons" : "3 al 15"
+																						}
+																					]
+																	},
+																	{
+																		"nanomsala": "1B",
+																		"serv_espe": [
+																						{
+																							"nomservei": "Endoscòpia",
+																							"hab_cons" : "10"
+																						},
+																						{
+																							"nomservei": "Hospital de Dia Cardiologia",
+																							"hab_cons" : ""
+																						},
+																						{
+																							"nomservei":"Hospital de Dia Pneumologia",
+																							"hab_cons" : "1 al 5"
+																						}
+																					]
+																	},
+																	{
+																		"nomsala": "1C",
+																		"serv_espe": [
+																						{
+																							"nomservei":"Consultes Pneumologia",
+																							"hab_cons" : "20 al 27"
+																						}
+																					]
+																	},
+																	{
+																		"nomsala": "1D",
+																		"serv_espe": [
+																						{
+																							"nomservei":"Consultes Cardiologia",
+																							"hab_cons" : "30 al 38"
+																						}
+																					]
+																	}
+																]
+													}
+												]
+										}
+									]
+					},
+					{
+						"id":"F",
+						"nom":"Santa Fe",
+						"adresa":"Recinte Taulí. Parc del Taulí, 1, Sabadell",
+						"imatge":"",
+						"lloc":"Reciente",
+						"contacte": [
+										{
+											
+											"icon":"location-outline",
+											"nomcontacte": "Com arribar",
+											"tipo": "enlace",
+											"valor":"url maps"
+										},
+										{
+											"icon":"call-outline",
+											"nomcontacte": "Centraleta",
+											"tipo": "llamada",
+											"valor":"937231010"
+
+										},
+										{
+											"icon":"mail-open-outline",
+											"nomcontacte": "informacio",
+											"tipo": "email",
+											"valor":"informacio@tauli.cat"
+											
+										},
+										{
+											"icon":"time-outline",
+											"nomcontacte": "Atenció al públic",
+											"tipo": "",
+											"valor":"de DL a DV"
+											
+										}
+						],
+						"serveis":[
+							{
+								"nomservei" : "Ambulatori",
+								"planta" : [
+									{
+										"numero":0,
+										"sala" : [
+													{
+														"nomsala":"Entrada entre Sta.Fe i CQA",
+														"serv_espe": [
+																		{
+																			"nomservei": "Consultes Centre de Desenvolupament i Atenció precoç (CDIAP)",
+																			"hab_cons" : ""
+																		}
+																	]
+													},
+													{
+														"nomsala":"",
+														"serv_espe": [
+																		{
+																			"nomservei": "Hospital de Dia Adults Salut Mental",
+																			"hab_cons" : ""
+																		}																		
+																	]
+													},
+													{
+														"nomsala":"C Ala esquerra",
+														"serv_espe": [
+																		{
+																			"nomservei": "Hospital de dia de Salut Mental d’Adolescents",
+																			"hab_cons" : ""
+																		},
+																		{
+																			"nomservei": "Consultes Salut Mental Infants i Adolescents",
+																			"hab_cons" : ""
+																		}
+																	]
+																	
+													},
+													{
+														"nomsala":"B Ala dreta",
+														"serv_espe": [
+																		{
+																			"nomservei": "Hospital de dia de Salut Mental d’Adolescents",
+																			"hab_cons" : "1 al 28"
+																		}
+																	]
+													},
+													{
+														"nomsala":"A",
+														"serv_espe": [
+																		{
+																			"nomservei": "Consultes Cribratge de Càncer",
+																			"hab_cons" : "3 i/o 8"
+																		},
+																		{
+																			"nomservei": "Consultes Accidents Trànsit",
+																			"hab_cons" : "1 al 3"
+																		},
+																		{
+																			"nomservei":"Consultes de Preoperatoris",
+																			"hab_cons" : "4 al 9"
+																		}
+																	]
+													}
+												]
+									}
+
+								]
+							}
+						]
+					},
+					{
+						"id":"X",
+						"nom":"CUAP Sant Fèlix",
+						"adresa":"Ctra. Barcelona, 473, Sabadell",
+						"imatge":"",
+						"lloc":"Exterior",
+						"contacte": [
+										{
+											
+											"icon":"location-outline",
+											"nomcontacte": "Com arribar",
+											"tipo": "enlace",
+											"valor":"url maps"
+										},
+										{
+											"icon":"call-outline",
+											"nomcontacte": "Centraleta",
+											"tipo": "llamada",
+											"valor":"937231010"
+
+										},
+										{
+											"icon":"mail-open-outline",
+											"nomcontacte": "informacio",
+											"tipo": "email",
+											"valor":"informacio@tauli.cat"
+											
+										},
+										{
+											"icon":"time-outline",
+											"nomcontacte": "Atenció al públic",
+											"tipo": "",
+											"valor":"de DL a DV"
+											
+										}
+									],
+						"serveis":[
+										{
+											"nomservei" : "Ambulatori",
+											"planta": [
+														{ 
+															"numero": 0,
+															"sala": [
+																		{
+																			"nomsala" : "",
+																			"serv_espe":[ 
+																							{
+																								"nomservei": "Informació",
+																								"hab_cons" : ""
+																							},
+																							{
+																								"nomservei": "Centre d'Urgencies d'Atenció Primària",
+																								"hab_cons" : ""
+																							}	
+																						]
+																		}	
+																	]
+														},
+														{ 
+															"numero": 1,
+															"sala": [
+																		{
+																			"nomsala" : "",
+																			"serv_espe":[ 
+																							{
+																								"nomservei": "Direcció d'Atenció Primària",
+																								"hab_cons" : ""
+																							}
+																						]
+																		}	
+																	]
+														},
+														{ 
+															"numero": 2,
+															"sala": [
+																		{
+																			"nomsala" : "",
+																			"serv_espe":[ 
+																							{
+																								"nomservei": "Direcció d'Atenció Primària",
+																								"hab_cons" : ""
+																							}
+																						]
+																		}	
+																	]
+														},
+														{ 
+															"numero": 3,
+															"sala": [
+																		{
+																			"nomsala" : "",
+																			"serv_espe":[ 
+																							{
+																								"nomservei": "Programació de visites cirurgia",
+																								"hab_cons" : "6"
+																							},
+																							{
+																								"nomservei": "Quiròfan Ambulatori (Dermato i cirurgia)",
+																								"hab_cons" : "5"
+																							},
+																							{
+																								"nomservei": "Endocrinologia",
+																								"hab_cons" : "6 i 7"
+																							},
+																							{
+																								"nomservei": "Espirometries",
+																								"hab_cons" : "6"
+																							},
+																							{
+																								"nomservei": "Oftalmologia",
+																								"hab_cons" : "1 al 4"
+																							}
+																						]
+																		}	
+																	]
+														}
+													]
+										}
+								]
+					}
+				]
+}

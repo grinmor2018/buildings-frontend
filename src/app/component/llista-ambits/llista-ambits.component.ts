@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Ambit } from '../../interfaces/Ambit';
-import { BuildingsService } from '../../services/buildings.service';
+import { RespostasService } from '../../services/respostas.service';
 
 @Component({
   selector: 'app-llista-ambits',
@@ -10,7 +10,7 @@ import { BuildingsService } from '../../services/buildings.service';
 })
 export class LlistaAmbitsComponent implements OnInit {
 
-  constructor(private buildingService: BuildingsService) { }
+  constructor(private respostasService: RespostasService) { }
 
   items : Ambit[] = []
 
@@ -19,7 +19,7 @@ export class LlistaAmbitsComponent implements OnInit {
   }
 
   getItems(){
-    this.buildingService.getAmbits()
+    this.respostasService.getAmbits()
     .subscribe(
       res => {
         this.items = res;
@@ -31,7 +31,7 @@ export class LlistaAmbitsComponent implements OnInit {
   }
 
   deleteItem(id: string){
-    this.buildingService.deleteAmbit(id)
+    this.respostasService.deleteAmbit(id)
     .subscribe(
       res => {
         this.getItems();

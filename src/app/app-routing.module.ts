@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
-import { LlistaBuildingsComponent } from './component/llista-buildings/llista-buildings.component'
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { Page404Component } from './pages/page404/page404.component';
 
 export const Approutes: Routes = [
   {
@@ -21,7 +23,12 @@ export const Approutes: Routes = [
     ]
   },
   {
-    path: '**',
-    redirectTo: '/dashboard'
+    path:'login', component:LoginComponent
+  },
+  {
+    path:'register', component:RegisterComponent
+  },
+  {
+    path: '**', component:Page404Component
   }
 ];

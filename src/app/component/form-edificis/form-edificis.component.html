@@ -1,0 +1,31 @@
+<!--Llista-->
+<div class="col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Edificis
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-hover table-sm">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Nom</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items.ambits">
+            <td>{{ item.code }}</td>
+            <td>{{ item.name }}</td>
+            <td><button type="button" class="btn btn-sm btn-primary" (click)= "loadForm(item._id)">
+              <i class="fa fa-check"></i> Editar
+            </button>
+            <button type="button" class="btn btn-sm btn-danger" (click)= "deleteItem(item._id)">
+              <i class="fa fa-times"></i> Esborrar
+            </button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

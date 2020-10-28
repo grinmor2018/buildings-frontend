@@ -3,7 +3,7 @@ import { NgForm } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 
 import { Ambit } from "../../interfaces/Ambit";
-import { BuildingsService } from "../../services/buildings.service";
+import { RespostasService } from "../../services/respostas.service";
 
 @Component({
   selector: "app-form-ambits",
@@ -22,7 +22,7 @@ export class FormAmbitsComponent implements OnInit {
   editing: boolean = false;
 
   constructor(
-    public buildingService: BuildingsService,
+    public respostasService: RespostasService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
@@ -33,7 +33,7 @@ export class FormAmbitsComponent implements OnInit {
   }
 
   getItems() {
-    this.buildingService.getAmbits().subscribe(
+    this.respostasService.getAmbits().subscribe(
       (res) => {
         this.items = res;
         console.log(res);
@@ -44,7 +44,7 @@ export class FormAmbitsComponent implements OnInit {
   }
 
   getItem(id: string) {
-    this.buildingService.getAmbit(id).subscribe(
+    this.respostasService.getAmbit(id).subscribe(
       (res) => {
         this.item = res;
         console.log(this.item);
@@ -54,9 +54,9 @@ export class FormAmbitsComponent implements OnInit {
   }
 
   submitItem() {
-    this.item = this.buildingService.selectedAmbit;
+    this.item = this.respostasService.selectedAmbit;
     console.log(this.item);
-    this.buildingService.createAmbit(this.item)
+    this.respostasService.createAmbit(this.item)
     .subscribe(
       (res) => {
         console.log(res);
@@ -69,7 +69,7 @@ export class FormAmbitsComponent implements OnInit {
 
   deleteItem(id: string) {
     if (confirm("Are you sure to delete?")) {
-      this.buildingService.deleteAmbit(id).subscribe(
+      this.respostasService.deleteAmbit(id).subscribe(
         (res) => {
           this.getItems();
           this.resetForm();
@@ -80,15 +80,15 @@ export class FormAmbitsComponent implements OnInit {
   }
 
   editItem() {
-    this.item = this.buildingService.selectedAmbit;
+    this.item = this.respostasService.selectedAmbit;
     console.log(this.item);
-    this.buildingService.updateAmbit(this.item._id, this.item)
+    this.respostasService.updateAmbit(this.item._id, this.item)
     .subscribe(
       (res) => {
         console.log(res);
         this.getItems();
         this.editing= false;
-        this.buildingService.selectedAmbit={
+        this.respostasService.selectedAmbit={
           _id:"",
           code: "",
           name: "",
@@ -105,7 +105,7 @@ export class FormAmbitsComponent implements OnInit {
   }
 
   preEditItem(ambit: Ambit): void {
-    this.buildingService.selectedAmbit = Object.assign({}, ambit);
+    this.respostasService.selectedAmbit = Object.assign({}, ambit);
     this.editing = true;
   }
 }

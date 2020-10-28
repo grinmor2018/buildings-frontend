@@ -23,17 +23,24 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { ToastComponent } from './toast/toast.component';
 import { ToastsContainer } from './toast/toast-container';
-import { LlistaBuildingsComponent } from './llista-buildings/llista-buildings.component';
-import { FormBuildingsComponent } from './form-buildings/form-buildings.component';
 import { FormMantenimentComponent } from './form-manteniment/form-manteniment.component';
 import { LlistaMantenimentComponent } from './llista-manteniment/llista-manteniment.component';
 import { FormAmbitsComponent } from './form-ambits/form-ambits.component';
-import { FormFloorsComponent } from './form-floors/form-floors.component';
-import { FormWaitingroomsComponent } from './form-waitingrooms/form-waitingrooms.component';
-import { FormServicespecialitiesComponent } from './form-servicespecialities/form-servicespecialities.component';
-import { FormConsultingroomsComponent } from './form-consultingrooms/form-consultingrooms.component';
-import { FormRoomsComponent } from './form-rooms/form-rooms.component';
 import { LlistaAmbitsComponent } from './llista-ambits/llista-ambits.component';
+import { FormEdificisComponent } from './form-edificis/form-edificis.component';
+import { FormContactesComponent } from './form-contactes/form-contactes.component';
+import { FormServeisComponent } from './form-serveis/form-serveis.component';
+import { FormPlantasComponent } from './form-plantas/form-plantas.component';
+import { FormSalasComponent } from './form-salas/form-salas.component';
+import { FormServespesComponent } from './form-servespes/form-servespes.component';
+import { LlistaEdificisComponent } from './llista-edificis/llista-edificis.component';
+import { LlistaPlantasComponent } from './llista-plantas/llista-plantas.component';
+import { LlistaSalasComponent } from './llista-salas/llista-salas.component';
+import { LlistaServeisComponent } from './llista-serveis/llista-serveis.component';
+import { LlistaServespesComponent } from './llista-servespes/llista-servespes.component';
+import { LlistaContactesComponent } from './llista-contactes/llista-contactes.component';
+import { LlistaRespostasComponent } from './llista-respostas/llista-respostas.component';
+import { FormRespostasComponent } from './form-respostas/form-respostas.component';
 
 @NgModule({
   imports: [
@@ -61,17 +68,24 @@ import { LlistaAmbitsComponent } from './llista-ambits/llista-ambits.component';
     CardsComponent,
     ToastComponent,
     ToastsContainer,
-    LlistaBuildingsComponent,
-    FormBuildingsComponent,
     FormMantenimentComponent,
     LlistaMantenimentComponent,
     FormAmbitsComponent,
-    FormFloorsComponent,
-    FormWaitingroomsComponent,
-    FormServicespecialitiesComponent,
-    FormConsultingroomsComponent,
-    FormRoomsComponent,
-    LlistaAmbitsComponent
+    LlistaAmbitsComponent,
+    FormEdificisComponent,
+    FormContactesComponent,
+    FormServeisComponent,
+    FormPlantasComponent,
+    FormSalasComponent,
+    FormServespesComponent,
+    LlistaEdificisComponent,
+    LlistaPlantasComponent,
+    LlistaSalasComponent,
+    LlistaServeisComponent,
+    LlistaServespesComponent,
+    LlistaContactesComponent,
+    LlistaRespostasComponent,
+    FormRespostasComponent
   ]
 })
 export class ComponentsModule {}
